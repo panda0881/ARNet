@@ -15,11 +15,11 @@ if not tf.gfile.Exists(checkpoints_dir):
 slim = tf.contrib.slim
 image_size = inception.inception_v4.default_image_size
 
-mscoco_images_path = '/data1/ailab_view/laviechen/image_captioning_pth/data/images/mscoco'
+mscoco_images_path = '/home/hzhangal/Projects/ARNet/image_captioning/data/images/mscoco'
 images_lists = sorted(glob.glob(mscoco_images_path + '/*.jpg'))
 
-images_conv_feats_save_path = '/data1/ailab_view/laviechen/image_captioning_pth/data/feats/mscoco_feats_v4_conv'
-images_fc_feats_save_path = '/data1/ailab_view/laviechen/image_captioning_pth/data/feats/mscoco_feats_v4_fc'
+images_conv_feats_save_path = '/home/hzhangal/Projects/ARNet/image_captioning_pth/data/feats/mscoco_feats_v4_conv'
+images_fc_feats_save_path = '/home/hzhangal/Projects/ARNet/image_captioning_pth/data/feats/mscoco_feats_v4_fc'
 if os.path.isdir(images_conv_feats_save_path) is False:
     os.mkdir(images_conv_feats_save_path)
 if os.path.isdir(images_fc_feats_save_path) is False:
