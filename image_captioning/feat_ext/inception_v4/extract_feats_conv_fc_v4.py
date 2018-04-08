@@ -9,7 +9,7 @@ from nets import inception
 from preprocessing import inception_preprocessing
 
 
-checkpoints_dir = './checkpoints'
+checkpoints_dir = 'checkpoints'
 if not tf.gfile.Exists(checkpoints_dir):
     tf.gfile.MakeDirs(checkpoints_dir)
 slim = tf.contrib.slim
