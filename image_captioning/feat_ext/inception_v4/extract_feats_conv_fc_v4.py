@@ -16,7 +16,9 @@ slim = tf.contrib.slim
 image_size = inception.inception_v4.default_image_size
 
 mscoco_images_path = '/home/hzhangal/Projects/ARNet/image_captioning/data/images/mscoco'
-images_lists = sorted(glob.glob(mscoco_images_path + '/*.jpg'))
+eval_test_lists = sorted(glob.glob(mscoco_images_path + '/*.jpg'))
+train_lists = sorted(glob.glob(mscoco_images_path + '/train2014/*.jpg'))
+images_lists = train_lists + eval_test_lists
 
 images_conv_feats_save_path = '/home/hzhangal/Projects/ARNet/image_captioning/data/feats/mscoco_feats_v4_conv'
 images_fc_feats_save_path = '/home/hzhangal/Projects/ARNet/image_captioning/data/feats/mscoco_feats_v4_fc'
