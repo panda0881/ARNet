@@ -14,7 +14,7 @@ import torch.optim as optim
 from torch.autograd import *
 
 from utils_model import *
-from class_soft_att import *
+from class_soft_att_rcst_LSTM import *
 
 
 def beam_search(opt, beam_images_names):
@@ -28,15 +28,15 @@ def beam_search(opt, beam_images_names):
     #     else:
     #         new_tmp.append(data)
 
-    new_tmp = dict()
-    for key, var in tmp.items():
-        # print("copy weights: {}  size: {}".format(key, var.size()))
-        if 'rcstLSTM' in key:
-            # new_tmp[key[9:]] = var
-            continue
-        else:
-            new_tmp[key] = var
-    model.load_state_dict(new_tmp)
+    # new_tmp = dict()
+    # for key, var in tmp.items():
+    #     # print("copy weights: {}  size: {}".format(key, var.size()))
+    #     if 'rcstLSTM' in key:
+    #         # new_tmp[key[9:]] = var
+    #         continue
+    #     else:
+    #         new_tmp[key] = var
+    model.load_state_dict(tmp)
     # model.copy_weights(opt.beam_model_path)
     model.cuda()
     model.eval()
