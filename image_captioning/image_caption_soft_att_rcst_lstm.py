@@ -161,6 +161,7 @@ if __name__ == '__main__':
     opt.vocab_size = len(idx_to_word)
 
     if opt.version == 'offline':
+        print('Start the offline training')
         train_images_names = open(opt.train_split, 'r').read().splitlines() + open(opt.restval_split, 'r').read().splitlines()
         val_images_names = open(opt.val_split, 'r').read().splitlines()
     elif opt.version == 'online':
