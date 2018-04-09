@@ -23,7 +23,7 @@ log_path=log/soft_attention_inception_v4_seed_"$seed"_h_"$lstm_size"_rcst_v2_"$r
 
 if [ "$mode" == "back" ]
 then
-    nohup python3.6 image_caption_soft_att_rcst.py --version "$version" \
+    nohup python3.6 image_caption_soft_att_rcst_lstm.py --version "$version" \
                                                    --feature_type inception_v4 \
                                                    --seed ${seed} \
                                                    --lstm_size ${lstm_size} \
@@ -38,7 +38,7 @@ then
                                                    --rcst_train_json_path "$rcst_train_json_path" \
                                                    > "$log_path" 2>&1 &
 else
-    python3.6 image_caption_soft_att_rcst.py --version "$version" \
+    python3.6 image_caption_soft_att_rcst_lstm.py --version "$version" \
                                              --feature_type inception_v4 \
                                              --seed ${seed} \
                                              --lstm_size ${lstm_size} \
