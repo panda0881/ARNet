@@ -22,7 +22,7 @@ class ShowAttendTellModel(nn.Module):
         self.vocab_size = opt.vocab_size
         self.input_encoding_size = opt.input_encoding_size
         self.lstm_size = opt.lstm_size
-        self.drop_prob_lm = opt.drop_prob_lm
+        # self.drop_prob_lm = opt.drop_prob_lm
         self.drop_prob_lm = 0.5
         self.seq_length = opt.seq_length
         
