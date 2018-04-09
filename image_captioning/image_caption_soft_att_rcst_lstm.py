@@ -155,7 +155,7 @@ def ARNet(opt):
 
 if __name__ == '__main__':
     opt = opts.parse_opt()
-    print(opt)
+    # print(opt)
     for var in vars(opt):
         print(var, getattr(opt, var))
 
