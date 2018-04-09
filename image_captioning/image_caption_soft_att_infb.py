@@ -27,8 +27,16 @@ def beam_search(opt, beam_images_names):
     #         new_tmp.append((data[0][9:], data[1]))
     #     else:
     #         new_tmp.append(data)
-    # model.load_state_dict(new_tmp)
-    model.copy_weights(opt.beam_model_path)
+
+    new_tmp = dict()
+    for key, var in tmp.items():
+        # print("copy weights: {}  size: {}".format(key, var.size()))
+        if 'rcstLSTM' in key:
+            new_tmp[key[9:]] = var
+        else:
+            new_tmp[key] = var
+    model.load_state_dict(new_tmp)
+    # model.copy_weights(opt.beam_model_path)
     model.cuda()
     model.eval()
 
