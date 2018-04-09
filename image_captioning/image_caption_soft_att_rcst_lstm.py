@@ -12,7 +12,7 @@ import torch
 from torch.autograd import *
 
 from utils_model import *
-from class_soft_att_rcst_lstm import *
+from image_captioning.class_soft_att_rcst_LSTM import *
 
 
 def ARNet(opt):
