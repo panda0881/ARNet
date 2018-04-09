@@ -32,7 +32,8 @@ def beam_search(opt, beam_images_names):
     for key, var in tmp.items():
         # print("copy weights: {}  size: {}".format(key, var.size()))
         if 'rcstLSTM' in key:
-            new_tmp[key[9:]] = var
+            # new_tmp[key[9:]] = var
+            continue
         else:
             new_tmp[key] = var
     model.load_state_dict(new_tmp)
