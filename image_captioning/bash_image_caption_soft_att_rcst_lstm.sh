@@ -15,7 +15,7 @@ rcst_scalar=0.005
 lr_decay_every=3
 lr_decay_rate=1.0
 
-rcst_model_path=models/soft_attention_inception_v4_seed_117/model_epoch-8.pth
+rcst_model_path=models/soft_attention_inception_v4_seed_117/model_epoch-0.pth
 rcst_model_save_path=models/soft_attention_inception_v4_seed_"$seed"_h_"$lstm_size"_rcst_v2_"$rcst_scalar"
 rcst_train_json_path=models/soft_attention_inception_v4_seed_"$seed"_h_"$lstm_size"_rcst_v2_"$rcst_scalar"/reconstruct_train_early_stop.json
 
