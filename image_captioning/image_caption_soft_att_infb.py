@@ -20,14 +20,15 @@ from class_soft_att import *
 def beam_search(opt, beam_images_names):
     model = ShowAttendTellModel(opt)
     tmp = torch.load(opt.beam_model_path)
-    print(tmp)
-    new_tmp = list()
-    for data in tmp:
-        if 'rcstLSTM' in data[0]:
-            new_tmp.append((data[0][9:], data[1]))
-        else:
-            new_tmp.append(data)
-    model.load_state_dict(new_tmp)
+    # print(tmp)
+    # new_tmp = list()
+    # for data in tmp:
+    #     if 'rcstLSTM' in data[0]:
+    #         new_tmp.append((data[0][9:], data[1]))
+    #     else:
+    #         new_tmp.append(data)
+    # model.load_state_dict(new_tmp)
+    model.copy_weights(opt.beam_model_path)
     model.cuda()
     model.eval()
 
