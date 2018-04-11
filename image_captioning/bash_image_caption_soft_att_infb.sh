@@ -2,7 +2,7 @@
 
 export CUDA_VISIBLE_DEVICES=1
 
-beam_file_path=data/splits/coco_test.txt
+beam_file_path=data/splits/submission_test_images.txt
 beam_model_path=models/soft_attention_inception_v4_seed_117_ARNet/model_epoch-0.pth
 beam_json_path=models/soft_attention_inception_v4_seed_117/model_epoch-0_beam_offline_test.json
 
