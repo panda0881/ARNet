@@ -8,6 +8,7 @@ import time
 import ipdb
 import random
 from six.moves import cPickle
+import json
 
 import torch
 import torch.optim as optim
@@ -42,6 +43,8 @@ def beam_search(opt, beam_images_names):
     model.eval()
 
     beam_images_sents = []
+    selected_ids = ['277803', '288665', '291434', '291436', '567334', '578392']
+    generated_results = dict()
     for idx, image_name in enumerate(beam_images_names):
         print("{},  {}".format(idx, image_name))
 
@@ -66,7 +69,9 @@ def beam_search(opt, beam_images_names):
         print(img_sent_1st + '\n')
         print(img_sent_2nd + '\n')
         print(img_sent_3rd + '\n')
-
+        generated_results[image_name] = [img_sent_1st, img_sent_2nd, img_sent_3rd]
+    with open('generated_caption.json', 'w') as f:
+        json.dump(generated_results, f)
     _ = evaluate(opt.beam_json_path, beam_images_names, beam_images_sents)
 
 
